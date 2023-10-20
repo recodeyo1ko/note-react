@@ -7,6 +7,8 @@ const Sidebar = ({
   activeNote,
   setActiveNote,
 }) => {
+  const sortedNotes = notes.sort((a, b) => b.lastModified - a.lastModified);
+
   return (
     <div>
       <div>
@@ -17,7 +19,7 @@ const Sidebar = ({
           </h1>
         </div>
         <div>
-          {notes.map((note) => (
+          {sortedNotes.map((note) => (
             <div
               className={`${note.id === activeNote && "active"}`}
               key={note.id}
