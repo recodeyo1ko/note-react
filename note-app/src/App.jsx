@@ -11,8 +11,8 @@ function App() {
   const onAddNote = () => {
     const newNote = {
       id: uuid(),
-      title: "新しいノート",
-      body: "",
+      title: "title",
+      body: "body",
       createdAt: Date.now(),
     };
     setNotes([...notes, newNote]);

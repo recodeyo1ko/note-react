@@ -21,10 +21,15 @@ const Main = ({ activeNote, onUpdateNote }) => {
           value={activeNote.title}
           onChange={(e) => onEditNote("title", e.target.value)}
         />
-        <textarea placeholder="ノート内容を記入" />
+        <textarea
+          placeholder="ノート内容を記入"
+          value={activeNote.body}
+          onChange={(e) => onEditNote("body", e.target.value)}
+        />
       </div>
       <div>
         <h1>{activeNote.title}</h1>
+        <p>{activeNote.body}</p>
         <div></div>
       </div>
     </div>

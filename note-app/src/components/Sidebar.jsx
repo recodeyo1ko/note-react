@@ -24,6 +24,7 @@ const Sidebar = ({
               onClick={() => setActiveNote(note.id)}
             >
               <strong>{note.title}</strong>
+              <p>{note.body}</p>
               <button onClick={() => onDeleteNote(note.id)}>削除</button>
             </div>
           ))}
