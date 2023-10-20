@@ -1,4 +1,5 @@
 import React from "react";
+import Markdown from "react-markdown";
 
 const Main = ({ activeNote, onUpdateNote }) => {
   if (!activeNote) {
@@ -29,7 +30,7 @@ const Main = ({ activeNote, onUpdateNote }) => {
       </div>
       <div>
         <h1>{activeNote.title}</h1>
-        <p>{activeNote.body}</p>
+        <Markdown>{activeNote.body}</Markdown>
         <div></div>
       </div>
     </div>
