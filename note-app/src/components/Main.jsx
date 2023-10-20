@@ -15,23 +15,24 @@ const Main = ({ activeNote, onUpdateNote }) => {
   };
 
   return (
-    <div>
-      <div>
+    <div className="app-main">
+      <div className="app-main-note-edit">
         <input
           type="text"
           value={activeNote.title}
           onChange={(e) => onEditNote("title", e.target.value)}
+          id="title"
         />
         <textarea
           placeholder="ノート内容を記入"
           value={activeNote.body}
           onChange={(e) => onEditNote("body", e.target.value)}
-        />
+          id="body"
+        ></textarea>
       </div>
-      <div>
-        <h1>{activeNote.title}</h1>
-        <Markdown>{activeNote.body}</Markdown>
-        <div></div>
+      <div className="app-main-note-preview">
+        <h1 className="preview-title">{activeNote.title}</h1>
+        <Markdown className="markdown-preview">{activeNote.body}</Markdown>
       </div>
     </div>
   );

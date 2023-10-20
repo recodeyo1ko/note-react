@@ -50,8 +50,8 @@ function App() {
   return (
     <div className="App">
       <Sidebar
-        onAddNote={onAddNote}
         notes={notes}
+        onAddNote={onAddNote}
         onDeleteNote={onDeleteNote}
         activeNote={activeNote}
         setActiveNote={setActiveNote}
