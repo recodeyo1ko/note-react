@@ -1,37 +1,35 @@
 import React from "react";
 
-export const Sidebar = () => {
+type Note = {
+  id: string;
+  title: string;
+  body: string;
+  createdAt: number;
+};
+
+type SidebarProps = {
+  onAddNote: () => void;
+  notes: Note[];
+};
+
+export const Sidebar: React.FC<SidebarProps> = ({ onAddNote, notes }) => {
   return (
     <div className="app-sidebar">
       <div className="app-sidebar-header">
         <h1>Notes</h1>
-        <button>追加</button>
+        <button onClick={onAddNote}>追加</button>
       </div>
       <div className="app-sidebar-notes">
-        <div>
-          <div className="sidebar-note-title">
-            <strong>title</strong>
-            <button>削除</button>
+        {notes.map((note) => (
+          <div key={note.id}>
+            <div className="sidebar-note-title">
+              <strong>title</strong>
+              <button>削除</button>
+            </div>
+            <p>body</p>
+            <small className="note-meta">修正日</small>
           </div>
-          <p>body</p>
-          <small className="note-meta">修正日</small>
-        </div>
-        <div>
-          <div className="sidebar-note-title">
-            <strong>title</strong>
-            <button>削除</button>
-          </div>
-          <p>body</p>
-          <small className="note-meta">修正日</small>
-        </div>
-        <div>
-          <div className="sidebar-note-title">
-            <strong>title</strong>
-            <button>削除</button>
-          </div>
-          <p>body</p>
-          <small className="note-meta">修正日</small>
-        </div>
+        ))}
       </div>
     </div>
   );
